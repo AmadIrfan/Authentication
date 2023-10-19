@@ -18,7 +18,11 @@ async function registerUsers(req, res) {
 				role: req.body.role,
 			};
 			const data = await userModel.create(createUser);
-			// await sendEmail((email, "", ""));
+			let result = await sendEmail(
+				email,
+				"Register successfully",
+				`You have been registered successfully in Authentication system. Please verify your email click on <a href='http://localhost:3000/verify/${data._id}'>verify</a>`
+			);
 			res.status(201).json({
 				status: "ok",
 				message: "successfully created",
