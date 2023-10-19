@@ -1,16 +1,18 @@
 const mongoose = require("mongoose");
+mongoose.set("strictQuery", true);
 
-const user = new mongoose.Schema(
-	{
-		firstName: { type: String, required: true },
-		lastName: { type: String, required: true },
-		email: { type: String, required: true },
-		password: { type: String, required: true },
-		isVerified: { type: Boolean, required: true, default: false },
-		dateOfBirth: { type: Date, required: true },
-		role: { type: String, enum: ["superAdmin", "admin", "moderator"] },
-	},
-	{ timestamps: true }
-);
+const url = "mongodb://127.0.0.1:27017/USER_AUTH";
+mongoose.connect(url, {
+	useNewUrlParser: true,
+	useUnifiedTopology: true,
+});
 
-module.exports = mongoose.model("users", user);
+const db = mongoose.connection;
+
+db.on("error", (err) => {
+	console.log("Error");
+	console.log(err);
+});
+db.once("open", () => {
+	console.log("connected with db");
+});
