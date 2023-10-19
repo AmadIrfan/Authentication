@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get("/", async (req, res) => {
 	try {
-		let result = await sendEmail("amnazafar052@gmail.com", "", "");
+		let result = await sendEmail("", "", "");
 		console.log(result);
 		res.send(result);
 	} catch (err) {
