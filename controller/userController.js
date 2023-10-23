@@ -1,5 +1,4 @@
 const userModel = require("../models/userModels");
-
 const encrypt = require("bcrypt");
 const { sendEmail } = require("../utils/emailSender");
 
@@ -103,3 +102,4 @@ module.exports = {
 	deletesUsers,
 	getUsers,
 };
+

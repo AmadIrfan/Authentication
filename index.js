@@ -7,6 +7,7 @@ const verify = require("./routes/verifyRoutes");
 const authRoute = require("./routes/authRoute");
 const app = express();
 const email = require("./routes/emailSendRoute");
+
 const bodyParser = require("body-parser");
 require("dotenv").config();
 
