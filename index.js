@@ -16,7 +16,6 @@ app.use(bodyParser.json());
 app.use(express.json());
 app.use(morgan("dev"));
 
-
 app.get("/", (req, res) => {
 	res.send("Welcome to my Authentication app");
 });
