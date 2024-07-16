@@ -1,3 +1,4 @@
+// @ts-nocheck
 const userModel = require("../models/userModels");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");

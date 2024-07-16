@@ -2,10 +2,8 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 mongoose.set("strictQuery", true);
 
-const url = process.env.MONGO_URL;
+const url = 'mongodb://127.0.0.1:27017/USERS';
 mongoose.connect(url, {
-	useNewUrlParser: true,
-	useUnifiedTopology: true,
 });
 
 const db = mongoose.connection;
