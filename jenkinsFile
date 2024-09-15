@@ -1,0 +1,24 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone repository') {
+            steps {
+                git branch: 'main', url: 'https://github.com/AmadIrfan/Authentication.git'
+            }
+        }
+        stage('npm versions') {
+            steps {
+                echo 'npm and node versions'
+                sh 'npm -v'
+                sh "node -v"
+            }
+        }
+        stage('Install dependencies') {
+            steps {
+                echo 'Hello World'
+                sh 'npm install'  
+            }
+        }
+    }
+}
